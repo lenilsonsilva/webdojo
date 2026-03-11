@@ -1,39 +1,121 @@
-# 🥋 WebDojo
+# Documentação de Testes Automatizados -- Webdojo (Cypress)
 
-![WebDojo Cover](.github/cover.png)
+## Visão Geral
 
-## 🚀 Sobre o Projeto
+Este projeto contém testes automatizados End‑to‑End (E2E) utilizando
+Cypress para validar funcionalidades da aplicação Webdojo.
 
-O **WebDojo** é um aplicativo exclusivo para os alunos do **Curso Ninja do Cypress**, ministrado pelo mestre **Fernando Papito**! 🥷💻 Ele foi criado para ser um **campo de treinamento prático**, onde os alunos podem aprimorar suas habilidades em automação de testes com desafios e exercícios focados no **Cypress**.
+A aplicação Webdojo está no mesmo repositório. Antes de executar os
+testes, é necessário iniciar a aplicação.
 
-🛠️ Tecnologias Utilizadas
+------------------------------------------------------------------------
 
-- [x] Git & GitHub 🌍 (Controle de versão e repositório remoto)
-- [x] Bash (Linha de Comando) 💻 (Execução de scripts e comandos)
-- [x] Visual Studio Code 🖥️ (Editor de código recomendado)
-- [x] Node.js (22+) 🟢 (Runtime JavaScript)
-- [x] Gerenciador de pacotes (npm ou yarn) 📦 (Dependências do projeto)
-- [x] Cypress 🧪 (Framework de testes end-to-end)
-- [x] Docker & Docker Compose 🐳 (Ambiente isolado para execução)
-- [x] PostgreSQL 🗄 (Banco de dados relacional)
-- [x] Use Bruno 🔌 (Cliente de API para testes de requisições)
+## Tecnologias Utilizadas
 
-## 📖 Como Usar
+-   Node.js
+-   Cypress
+-   JavaScript
+-   NPM
 
-As instruções detalhadas de instalação e uso do **WebDojo** estão disponíveis dentro do **Curso Ninja do Cypress**.
+------------------------------------------------------------------------
 
-🔗 **Acesse o curso e seja Ninja da Automação em Cypress!** 👉 [ninjadocypress.com.br](https://ninjadocypress.com.br)
+## Estrutura do Projeto
 
-## ⚠️ Contribuição
+    web/
+     └── cypress/
+          ├── e2e/
+          │     └── login.cy.js
+          │
+          ├── fixtures/
+          │     └── cep.json
+          │
+          ├── support/
+          │     ├── commands.js
+          │     ├── e2e.js
+          │     └── utils.js
+          │
+          └── documento.pdf
 
-O **WebDojo** é um ambiente **exclusivo** para os alunos do **Curso Ninja do Cypress**, e por isso, **não aceita contribuições externas**.
+### cypress/e2e
 
-📢 Para suporte e dúvidas, utilize os canais oficiais do curso!
+Contém os testes automatizados E2E.
 
-## 🔒 Licença
+### cypress/fixtures
 
-Este projeto é **exclusivo para alunos** do **Curso Ninja do Cypress**. 🚫 O compartilhamento ou distribuição sem autorização é proibido.
+Arquivos com dados utilizados nos testes.
 
-------
+### cypress/support
 
-💙 Feito com dedicação e muito café por **Fernando Papito** e a equipe do **Curso Ninja do Cypress**. 🚀🔥
+Arquivos de suporte com comandos customizados e funções utilitárias.
+
+------------------------------------------------------------------------
+
+## Instalação
+
+Clone o repositório:
+
+    git clone <url-do-repositorio>
+
+Instale as dependências:
+
+    npm install
+
+------------------------------------------------------------------------
+
+## Executar a aplicação
+
+Antes dos testes execute:
+
+    npm run dev
+
+Script:
+
+    "dev": "serve -s dist -p 3000"
+
+Aplicação disponível em:
+
+    http://localhost:3000
+
+------------------------------------------------------------------------
+
+## Executar testes Desktop
+
+    npm run test:login
+
+Script:
+
+    "test:login": "npx cypress run --spec cypress/e2e/login.cy.js --config viewportWidth=1440,viewportHeight=900"
+
+------------------------------------------------------------------------
+
+## Executar testes Mobile
+
+    npm run test:login:mobile
+
+Script:
+
+    "test:login:mobile": "npx cypress run --spec cypress/e2e/login.cy.js --config viewportWidth=414,viewportHeight=896"
+
+------------------------------------------------------------------------
+
+## Tipos de testes
+
+-   Login com sucesso
+-   Login inválido
+-   Validação de mensagens de erro
+-   Testes responsivos
+
+------------------------------------------------------------------------
+
+## Boas práticas
+
+-   Uso de fixtures
+-   Comandos customizados
+-   Funções reutilizáveis
+-   Separação de responsabilidades
+
+------------------------------------------------------------------------
+
+## Autor
+
+Documentação do projeto de automação Webdojo utilizando Cypress.
